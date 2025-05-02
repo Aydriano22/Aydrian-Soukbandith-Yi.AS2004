@@ -1,185 +1,46 @@
+'''
+Hunt for the Wilderpeople Quiz
+Aydrian Soukbandith-Yi
+'''
+import time
 
 # MAKING A LIST FOR QUESTIONS
-question = ["Who directed Hunt for the wilderpeople movie? "
-              "Who played Ricky Baker? "
-               "Who played Uncle Hec? "
-              "Did Aunt Bella die in Hunt for the wilderpeople? "
-              "What crimes did Ricky Baker commit? "
-              "What year did Hunt for the wilderpeople come out? "]
+LIST_QUESTIONS = [
+    'Who directed Hunt for the wilderpeople movie?\nA. Peter Jackson\nB. Taika Waititi\nC. Jane Campion\n',
+    'Who played Ricky Baker?\nA. James Rolleston \nB. Teoreore Ngatai \nC. Julian Dennison\n',
+    'Who played Uncle Hec?\nA. Sam Neil \nB. Hugh Jackman \nC. Russel Crowe \nD. Rhys Darby\n',
+    'Aunt Bella died in Hunt for the wilderpeople?\nTrue?\nFalse?\n',
+    'What crimes did Ricky Baker commit?\nA. Eating \nB. Crashing \nC. Stealing \nD. Robbery\n',
+    'What year did Hunt for the wilderpeople come out?\nA. 2015 \nB. 2017 \nC. 2016 \nD. 2018\n' ]
 
-
-# Title
-print("Welcome to Hunt for the wilderpeople quiz! ")
-print('Instructions ')
-print("Try to get 10 points by the end of this quiz ")
-print("There'll be 6 questions ")
-print("Please type in the answers, don't put in A,B,C.. ")
-
-points = 0
-
-
-print(list_questions1[0])
-
-print()
-answer = input("\n A. Peter Jackson \n B. Taika Waititi \n C. Jane Campion \n Answer: ").lower()
-
-if answer == 'taika waititi':
-    print("That's correct, Taika Waititi also directed other movies, such as Thor love & Thunder ")
-    points += 1
-else: 
-    print("That's incorrect, good try ")
-    print("The correct answer was Taika Waititi ")
+LIST_ANSWERS = [
+    'Taika Waititi',
+    'Julian Dennison',
+    'Sam Neil',
+    'True',
+    'Stealing',
+    '2016' ]
     
-
-
-
-print(list_questions2[0])
-
-print()
-answer = input("\n A. James Rolleston \n B. Teoreore Ngatai \n C. Julian Dennison \n Answer: ").lower()
-
-
-if answer == 'julian dennison':
-    print("That's correct, you're onto it ")
-    points += 1
-else:
-    print("That's incorrect ")
-    print("The correct answer was Julian Dennison ")
-
-
-
-print(list_questions3[0])
-
-print()
-answer = input("\n A. Sam Neil \n B. Hugh Jackman \n C. Russel Crowe \n D. Rhys Darby \n Answer: ").lower()
-
-if answer == 'sam neil':
-    print("That's correct, did you know Sam Neil was in the Jurrasic Park movie ")
-    points += 2
-else: 
-    print("That's incorrect ")
-    print("The correct answer was Sam Neil ")
+points = 0  
     
-
-
-print(list_questions4[0])
-
-print()
-answer = input('True? or False? ').lower()
-
-if answer =='true':
-    print("That's correct, Great job! ")
-    points += 2
-else:
-    print("That's incorrect ")
+print("Welcome to Hunt for the wilderpeople quiz!\nInstructions:\nTry to get 6 points by the end of this quiz\nThere will be 6 questions\nPlease type in answers, don't put in A,B,C..\n\n")
+time.sleep(0.5)
     
-
-
-print(list_questions5[0])
-
-print()
-answer = input("\n A. Eating \n B. Crashing \n C. Stealing \n D. Robbery \n Answer: ").lower()
-
-if answer == "stealing":
-    print("That's correct, Nice! ")
-    points += 3
-else:
-    print("That's incorrect ")
-    print("The correct answer was stealing ")
-
-
-print(list_questions6[0])
-
-print()
-
-answer = input("\n A. 2015 \n B. 2017 \n C. 2016 \n D. 2018 \n Answer: ").lower()
-
-
-if answer == '2016':
-    print("That's correct ")
-    print("You are superior! ")
-    points +=1
-else:
-    print("That's incorrect, the correct answer was '2016' ")
-    print("Try again next time ")
-
-
-print("Your results " + str(points) + "points correct!")
+for i in range (len(LIST_QUESTIONS)):
+    print(f"{LIST_QUESTIONS[i]}")
+    
+    ans = input("Answer: ")
+    ans = ans.lower().title()
+    
+    if ans == LIST_ANSWERS[i]:
+        points +=1
+        i =+1
+        print(f"That's correct! You have {points} points!\n")
+        time.sleep(0.5)
+    else: 
+       print(f"That's incorrect. The answer was: {LIST_ANSWERS[i]}\nYou still have {points} points.\n")
+       time.sleep(0.5)
+      
 print("I hope you enjoyed the quiz ")
-
-
 print("Quiz program was created by Aydrian Soukbandith-Yi ")
-print()
-answer = input("\n A. James Rolleston \n B. Teoreore Ngatai \n C. Julian Dennison \n Answer: ").lower()
-
-
-if answer == 'julian dennison':
-    print("That's correct, you're onto it ")
-    points += 1
-else:
-    print("That's incorrect ")
-    print("The correct answer was Julian Dennison ")
-
-
-
-print(list_questions3[0])
-
-print()
-answer = input("\n A. Sam Neil \n B. Hugh Jackman \n C. Russel Crowe \n D. Rhys Darby \n Answer: ").lower()
-
-if answer == 'sam neil':
-    print("That's correct, did you know Sam Neil was in the Jurrasic Park movie ")
-    points += 2
-else: 
-    print("That's incorrect ")
-    print("The correct answer was Sam Neil ")
-    
-
-
-print(list_questions4[0])
-
-print()
-answer = input('True? or False? ').lower()
-
-if answer =='true':
-    print("That's correct, Great job! ")
-    points += 2
-else:
-    print("That's incorrect ")
-    
-
-
-print(list_questions5[0])
-
-print()
-answer = input("\n A. Eating \n B. Crashing \n C. Stealing \n D. Robbery \n Answer: ").lower()
-
-if answer == "stealing":
-    print("That's correct, Nice! ")
-    points += 3
-else:
-    print("That's incorrect ")
-    print("The correct answer was stealing ")
-
-
-print(list_questions6[0])
-
-print()
-
-answer = input("\n A. 2015 \n B. 2017 \n C. 2016 \n D. 2018 \n Answer: ").lower()
-
-
-if answer == '2016':
-    print("That's correct ")
-    print("You are superior! ")
-    points +=1
-else:
-    print("That's incorrect, the correct answer was '2016' ")
-    print("Try again next time ")
-
-
-print("Your results " + str(points) + "points correct!")
-print("I hope you enjoyed the quiz ")
-
-
-print("Quiz program was created by Aydrian Soukbandith-Yi ")
+quit()
